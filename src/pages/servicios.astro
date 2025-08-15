@@ -1,0 +1,47 @@
+---
+// servicios.astro
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const pageTitle = "Servicios - Organizadora de Eventos";
+const pageDescription = "Descubre todos nuestros servicios para eventos sociales y corporativos.";
+---
+<MainLayout title={pageTitle} description={pageDescription}>
+  <Navbar slot="navbar" />
+
+  <section class="pt-28 max-w-6xl mx-auto px-4 animate-fadeIn">
+    <h1 class="text-3xl md:text-4xl font-bold text-red-500 mb-6 text-center">Nuestros Servicios</h1>
+    <p class="mb-6 text-sm md:text-base text-center max-w-2xl mx-auto">
+      Diseñamos y ejecutamos eventos que cuentan historias. Cada servicio es personalizado y adaptado a tus necesidades.
+    </p>
+  </section>
+
+  <section class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4 py-12 animate-slideUp">
+    <div class="bg-white p-6 rounded shadow hover:shadow-lg transition hover:-translate-y-1">
+      <h3 class="font-bold text-lg">Bodas</h3>
+      <p class="text-sm md:text-base">Planeación integral desde la ceremonia hasta la fiesta.</p>
+    </div>
+    <div class="bg-white p-6 rounded shadow hover:shadow-lg transition hover:-translate-y-1">
+      <h3 class="font-bold text-lg">Eventos corporativos</h3>
+      <p class="text-sm md:text-base">Conferencias, lanzamientos y cenas de gala para empresas.</p>
+    </div>
+    <div class="bg-white p-6 rounded shadow hover:shadow-lg transition hover:-translate-y-1">
+      <h3 class="font-bold text-lg">Fiestas privadas</h3>
+      <p class="text-sm md:text-base">Cumpleaños, aniversarios y celebraciones temáticas.</p>
+    </div>
+  </section>
+
+  <section class="bg-gray-100 py-12 animate-fadeIn">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-xl md:text-2xl font-bold text-red-500 mb-6 text-center">Galería de procesos</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {Array.from({ length: 8 }, (_, i) => (
+          <img src={`/img/proceso${i+1}.webp`} alt={`Proceso ${i+1}`} class="rounded-lg shadow-lg hover:scale-105 transition object-cover w-full h-36 md:h-48" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</MainLayout>

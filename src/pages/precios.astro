@@ -1,0 +1,54 @@
+---
+// precios.astro
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const pageTitle = "Precios - Organizadora de Eventos";
+const pageDescription = "Consulta nuestros paquetes de servicios con precios y beneficios.";
+---
+<MainLayout title={pageTitle} description={pageDescription}>
+  <Navbar slot="navbar" />
+
+  <section class="pt-28 max-w-6xl mx-auto px-4 animate-fadeIn">
+    <h1 class="text-3xl md:text-4xl font-bold text-red-500 mb-6 text-center">Paquetes y precios</h1>
+    <p class="mb-6 text-sm md:text-base text-center max-w-2xl mx-auto">
+      Hemos diseñado opciones que se adaptan a todos los presupuestos y necesidades. Todos incluyen atención personalizada.
+    </p>
+  </section>
+
+  <section class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4 py-12 animate-slideUp">
+    <div class="bg-white p-6 rounded shadow hover:shadow-lg transition flex flex-col hover:-translate-y-1">
+      <h3 class="font-bold text-lg">Básico</h3>
+      <p class="text-sm md:text-base mb-4">Ideal para eventos pequeños e íntimos.</p>
+      <p class="text-2xl font-bold text-red-500 mb-4">$8,500 MXN</p>
+      <ul class="list-disc list-inside text-sm md:text-base flex-grow">
+        <li>Planeación parcial</li>
+        <li>Decoración básica</li>
+        <li>Coordinación en el día</li>
+      </ul>
+    </div>
+    <div class="bg-white p-6 rounded shadow hover:shadow-lg transition flex flex-col hover:-translate-y-1">
+      <h3 class="font-bold text-lg">Intermedio</h3>
+      <p class="text-sm md:text-base mb-4">Perfecto para eventos de tamaño medio.</p>
+      <p class="text-2xl font-bold text-red-500 mb-4">$15,000 MXN</p>
+      <ul class="list-disc list-inside text-sm md:text-base flex-grow">
+        <li>Planeación completa</li>
+        <li>Decoración personalizada</li>
+        <li>Coordinación y logística</li>
+      </ul>
+    </div>
+    <div class="bg-white p-6 rounded shadow hover:shadow-lg transition flex flex-col hover:-translate-y-1">
+      <h3 class="font-bold text-lg">Plus</h3>
+      <p class="text-sm md:text-base mb-4">La experiencia más exclusiva y completa.</p>
+      <p class="text-2xl font-bold text-red-500 mb-4">$25,000 MXN</p>
+      <ul class="list-disc list-inside text-sm md:text-base flex-grow">
+        <li>Planeación premium</li>
+        <li>Decoración de lujo</li>
+        <li>Producción audiovisual</li>
+      </ul>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</MainLayout>

@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+const { title, description } = Astro.props;
+---
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="eventos, bodas, fiestas, organización, decoraciones, eventos corporativos, Tuxtla Gutiérrez, Chiapas" />
+  <meta name="author" content="Organizadora Eventos - By Team 3" />
+  
+  <!-- SEO Local -->
+  <meta name="geo.region" content="MX-CHP" />
+  <meta name="geo.placename" content="Tuxtla Gutiérrez" />
+  <meta name="geo.position" content="16.7597;-93.1131" />
+  <meta name="ICBM" content="16.7597, -93.1131" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="/img/logop.webp" />
+  <link rel="shortcut icon" href="/img/logop.ico" type="image/x-icon" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="/img/hero.webp" />
+  <meta property="og:url" content="https://tusitio.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="/img/hero.webp" />
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-neutral text-dark">
+  <slot name="navbar" />
+  <main class="min-h-screen">
+    <slot />
+  </main>
+  <slot name="footer" />
+</body>
+</html>

@@ -1,0 +1,54 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const pageTitle = "Nosotros - Organizadora de Eventos";
+const pageDescription = "Conoce nuestra historia, misión, visión y equipo. Creamos eventos memorables en Tuxtla Gutiérrez, Chiapas.";
+
+const teamMembers = [
+  { image: "/img/equipo1.webp", name: "organizadora" },
+  { image: "/img/equipo2.webp", name: "coordinador" },
+  { image: "/img/equipo3.webp", name: "logística" },
+  { image: "/img/equipo4.webp", name: "producción" },
+];
+---
+<MainLayout title={pageTitle} description={pageDescription}>
+  <Navbar slot="navbar" />
+
+  <section class="max-w-7xl mx-auto px-4 py-24 animate-fadeIn">
+    <h1 class="text-4xl font-bold mb-8 text-center text-red-500">Quiénes somos</h1>
+    <p class="mb-8 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+      En <strong>Organizadora de Eventos</strong> transformamos ideas en experiencias únicas.
+      Fundados en <strong>Tuxtla Gutiérrez, Chiapas</strong>, nos inspira la calidez de nuestra gente y la belleza de nuestras tradiciones.
+      Cada evento es único y lo planeamos con pasión, detalle y profesionalismo.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-10 text-center animate-slideUp">
+      <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-1">
+        <h2 class="text-2xl font-bold mb-4 text-red-500">Misión</h2>
+        <p>Ofrecer un servicio integral que combine <strong>creatividad y profesionalismo</strong>, garantizando experiencias que superen expectativas.</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-1">
+        <h2 class="text-2xl font-bold mb-4 text-red-500">Visión</h2>
+        <p>Ser reconocidos como líderes en el sureste de México por nuestra <strong>innovación y trato personalizado</strong>.</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-1">
+        <h2 class="text-2xl font-bold mb-4 text-red-500">Historia</h2>
+        <p>Desde 2018 hemos organizado más de <strong>500 eventos</strong>, desde celebraciones íntimas hasta conferencias internacionales.</p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-16 mb-8 text-center animate-fadeIn">Nuestro equipo</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {teamMembers.map((member) => (
+        <div class="text-center transition transform hover:scale-105">
+          <img src={member.image} alt={member.name} class="w-32 h-32 rounded-full mx-auto mb-3 shadow-lg" loading="lazy" />
+          <p class="font-semibold">{member.name}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</MainLayout>

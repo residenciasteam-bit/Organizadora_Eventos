@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Animaciones personalizadas */
+@layer utilities {
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  .animate-slideUp {
+    animation: slideUp 1s ease-out forwards;
+  }
+}
