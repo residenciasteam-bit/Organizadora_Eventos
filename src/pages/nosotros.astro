@@ -38,16 +38,18 @@ const teamMembers = [
         <p>Desde 2018 hemos organizado más de <strong>500 eventos</strong>, desde celebraciones íntimas hasta conferencias internacionales.</p>
       </div>
     </div>
-
+...
     <h2 class="text-2xl font-bold mt-16 mb-8 text-center animate-fadeIn">Nuestro equipo</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 zoomable">
       {teamMembers.map((member) => (
         <div class="text-center transition transform hover:scale-105">
-          <img src={member.image} alt={member.name} class="w-32 h-32 rounded-full mx-auto mb-3 shadow-lg" loading="lazy" />
+          <img src={member.image} alt={member.name} class="w-32 h-32 object-cover rounded-lg mx-auto mb-3 shadow-lg" loading="lazy" />
           <p class="font-semibold">{member.name}</p>
         </div>
       ))}
     </div>
+...
+
   </section>
 
   <Footer slot="footer" />

@@ -37,7 +37,7 @@ const pageDescription = "Descubre todos nuestros servicios para eventos sociales
       <h2 class="text-xl md:text-2xl font-bold text-red-500 mb-6 text-center">Galería de procesos</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {Array.from({ length: 8 }, (_, i) => (
-          <img src={`/img/proceso${i+1}.webp`} alt={`Proceso ${i+1}`} class="rounded-lg shadow-lg hover:scale-105 transition object-cover w-full h-36 md:h-48" />
+          <img src={`/img/proceso${i+1}.webp`} alt={`Proceso ${i+1}`} class=" clickable-img rounded-lg shadow-lg hover:scale-105 transition object-cover w-full h-36 md:h-48" />
         ))}
       </div>
     </div>

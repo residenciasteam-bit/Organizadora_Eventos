@@ -45,5 +45,47 @@ const { title, description } = Astro.props;
     <slot />
   </main>
   <slot name="footer" />
+
+  <!-- Lightbox global -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 items-center justify-center hidden z-[9999]">
+    <span id="lightbox-close" class="absolute top-6 right-8 text-white text-4xl cursor-pointer select-none">&times;</span>
+    <img id="lightbox-img" src="" alt="Vista ampliada" class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl transition-transform duration-300" />
+  </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img") as HTMLImageElement | null;
+    const lightboxClose = document.getElementById("lightbox-close");
+
+    if (lightbox && lightboxImg) {
+      document.querySelectorAll(".clickable-img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = (img as HTMLImageElement).src;
+          lightbox.classList.remove("hidden");
+          lightbox.classList.add("flex");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      if (lightboxClose) {
+        lightboxClose.addEventListener("click", () => {
+          lightbox.classList.add("hidden");
+          lightbox.classList.remove("flex");
+          document.body.style.overflow = "";
+        });
+      }
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.add("hidden");
+          lightbox.classList.remove("flex");
+          document.body.style.overflow = "";
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>

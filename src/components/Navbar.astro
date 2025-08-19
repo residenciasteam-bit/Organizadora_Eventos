@@ -12,11 +12,11 @@ const currentPath = Astro.url.pathname;
 
     <!-- Menú desktop -->
     <ul class="hidden md:flex space-x-6 text-gray-700 font-semibold">
-      <li><a href="/" class={`hover:text-red-500 transition ${currentPath === "/" ? "text-red-500 border-b-2 border-red-500" : ""}`}>Inicio</a></li>
-      <li><a href="/nosotros" class={`hover:text-red-500 transition ${currentPath === "/nosotros" ? "text-red-500 border-b-2 border-red-500" : ""}`}>Nosotros</a></li>
-      <li><a href="/servicios" class={`hover:text-red-500 transition ${currentPath === "/servicios" ? "text-red-500 border-b-2 border-red-500" : ""}`}>Servicios</a></li>
-      <li><a href="/precios" class={`hover:text-red-500 transition ${currentPath === "/precios" ? "text-red-500 border-b-2 border-red-500" : ""}`}>Precios</a></li>
-      <li><a href="/contacto" class={`hover:text-red-500 transition ${currentPath === "/contacto" ? "text-red-500 border-b-2 border-red-500" : ""}`}>Contacto</a></li>
+      <li><a href="/" class={`hover:text-red-500 transition ${currentPath === "/" ? "text-red-500 border-b-2 border-red-500 pb-1" : ""}`}>Inicio</a></li>
+      <li><a href="/nosotros" class={`hover:text-red-500 transition ${currentPath === "/nosotros" ? "text-red-500 border-b-2 border-red-500 pb-1" : ""}`}>Nosotros</a></li>
+      <li><a href="/servicios" class={`hover:text-red-500 transition ${currentPath === "/servicios" ? "text-red-500 border-b-2 border-red-500 pb-1" : ""}`}>Servicios</a></li>
+      <li><a href="/precios" class={`hover:text-red-500 transition ${currentPath === "/precios" ? "text-red-500 border-b-2 border-red-500 pb-1" : ""}`}>Precios</a></li>
+      <li><a href="/contacto" class={`hover:text-red-500 transition ${currentPath === "/contacto" ? "text-red-500 border-b-2 border-red-500 pb-1" : ""}`}>Contacto</a></li>
     </ul>
 
     <!-- Botón hamburguesa -->
